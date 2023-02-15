@@ -1,0 +1,179 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+  <div class="col-12 col-lg-6">
+    <img src="/img/bali4.jpg" width="607" height="510" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="Cooking With Node.js">
+  </div>
+
+  <div class="col-12 col-lg-6">
+    <h1 class="display-5 fw-bold mb-3">Cari banten yang ingin anda buat</h1>
+    <p class="lead">
+      Jelajahi lebih banyak tentang banten yang ingin anda pelajari, pelajari banten banten yang diperlukan dalam upakara Hindu
+    </p>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+      <a href="/explore-latest" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Cari terbaru</a>
+      <a href="/explore-random" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Tampilkan acak</a>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- Categories Start -->
+
+<h2></h2>
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+  <% if(categories != '') { %>
+    <% categories.forEach(function(category, index) { %>
+      <a href="/categories/<%- category.name %>" class="col text-center category__link">
+        <div class="category__img shadow">
+          <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%- category.name %></div>
+      </a>
+    <% }) %>
+  <% } %>
+
+  <a href="/categories" class="col text-center category__link">
+    <div class="category__img shadow">
+      <img src="img/daksina2.jpg" alt="View All Categories" loading="lazy">
+    </div>
+    <div class="pt-1">View All</div>
+  </a>
+
+</div>
+<!-- Categories End -->
+
+
+
+<!-- Latest Start -->
+
+<section class="pb-4 pt-4">
+  
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+    <% if(banten != '') { %>
+      <% banten.latest.forEach(function(recipe, index){ %>
+      <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= recipe.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+
+</section>
+<!-- Latest End -->
+
+<!-- nista Start -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>nista </h2>
+    <a href="/categories/nista" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(typeof banten.nista !== 'undefined' && banten.nista.length > 0) { %>
+      <% banten.nista.forEach(function(recipe, index){ %>
+      <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= recipe.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- nista End -->
+
+<!-- madya Start -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>madya </h2>
+    <a href="/categories/madya" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(banten.madya != '') { %>
+      <% banten.madya.forEach(function(recipe, index){ %>
+      <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= recipe.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- madya End -->
+
+<!-- utama Recipes -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>utama </h2>
+    <a href="/categories/utama" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(banten.utama != '') { %>
+      <% banten.utama.forEach(function(recipe, index){ %>
+      <a href="/recipe/<%= recipe._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= recipe.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+<!-- utama End -->
+
+
+<!-- Submit - Start -->
+<section class="px-4 py-5 my-5 text-center">
+  <img src="/img/upload.jpg" class="d-block mx-auto mb-4 img-fluid" alt="Upload banten yang kamu ketahui" width="566" height="208" loading="lazy">
+  <h1 class="display-5 fw-bold">Upload banten yang kamu ketahui</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Upload banten yang kamu ketahui untuk membantu orang orang.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <a href="/submit-recipe" class="btn btn-primary btn-dark btn-lg">upload banten</a>
+    </div>
+  </div>
+</section>
+
+<section class="px-4 py- my-5 text-center">
+  <h3>Jika ingin memesan atau berkonsultasi tentang banten</h3>
+  <h3>bisa hubungi kontak dibawah</h3>
+  <div class="row row-cols-3 ">
+    <h2>Dong Jero Pius</h3>
+    <h2>Men Adi</h2>
+    <h2>Dong Rerod</h2> <br>
+    <h2>087860346608</h2>
+    <h2>087860346608</h2>
+    <h2>087860346608</h2>
+    
+  </div>
+</section>
+<section class="px-4 py-2 my-5 text-center">
+  <h3>Jika ada postingan yang diluar tentang banten</h3>
+  <h3>Bisa dilaporkan melalui email di bawah</h3>
+  <div class="row py-3">
+  <h2>pius17431@gmail.com</h2>
+  </div>
+</section>
+ 
+<!-- Submit - End -->

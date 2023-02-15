@@ -1,0 +1,26 @@
+[
+  {
+    "_id": {
+      "$oid": "614dd75a9693912a00f0514d"
+    },
+    "name": "madya",
+    "image": "madya-banten.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "614dd75a9693912a00f0514e"
+    },
+    "name": "utama",
+    "image": "utama-banten.jpg",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "614dd75a9693912a00f0514c"
+    },
+    "name": "nista",
+    "image": "nista-banten.jpg",
+    "__v": 0
+  }
+]
