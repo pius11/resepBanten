@@ -42,3 +42,30 @@ a { color: var(--bs-dark); }
   width: 100%;
   object-fit: cover;
 }
+.wrapper{
+  padding: 5px;
+  max-width: 880px;
+  width: 80%;
+  margin: 30px auto;
+ 
+}
+header{
+  padding: 5px;
+  text-align: center;
+  font-size: 21px;
+}
+.columns {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 5px 0;
+  
+}
+.column{
+  flex: 1;
+  border: 1px;
+  margin: 2px;
+  padding: 10px;
+  background: white;
+  transition: 0.3s;
+}
